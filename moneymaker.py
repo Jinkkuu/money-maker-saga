@@ -19,8 +19,10 @@ if request.status_code == 200:
     print('Creating Backup')
     os.system('cp moneymaker.py moneymaker.py.bk')
     os.system('rm updatechk')
-    os.system('wget https://raw.githubusercontent.com/mojeg/money-maker-saga/main/moneymaker.py --output-document=moneymaker.py')
-    os.execv(__file__,'moneymaker.py')
+    os.system('wget https://raw.githubusercontent.com/mojeg/money-maker-saga/main/moneymaker.py --output-document=moneymaker.py -q')
+    print('Update is completed, please restart your game to see the new update!')
+    time.sleep(3)
+    exit
   else:
     print('No updates UTD')
     os.system('rm updatechk')
