@@ -2,10 +2,10 @@ from random import randint
 import time
 import os
 import requests
-appversion=1.2
+appversion=1.3
 appname='Money Maker Saga'
 space=' '
-appcversion=3
+appcversion=4
 print(str(appname)+str(space)+str(appversion))
 print('Checking Version')
 os.system('wget https://raw.githubusercontent.com/mojeg/money-maker-saga/main/updatechk -q')
@@ -22,7 +22,7 @@ if request.status_code == 200:
     os.system('wget https://raw.githubusercontent.com/mojeg/money-maker-saga/main/moneymaker.py --output-document=moneymaker.py -q')
     print('Update is completed, please restart your game to see the new update!')
     time.sleep(3)
-    exit
+    exit()
   else:
     print('No updates UTD')
     os.system('rm updatechk')
