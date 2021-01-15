@@ -2,10 +2,10 @@ from random import randint
 import time
 import os
 import requests
-appversion=1.1
+appversion=1.2
 appname='Money Maker Saga'
 space=' '
-appcversion=2
+appcversion=3
 print(str(appname)+str(space)+str(appversion))
 print('Checking Version')
 os.system('wget https://raw.githubusercontent.com/mojeg/money-maker-saga/main/updatechk -q')
@@ -20,7 +20,7 @@ if request.status_code == 200:
     os.system('cp moneymaker.py moneymaker.py.bk')
     os.system('rm updatechk')
     os.system('wget https://raw.githubusercontent.com/mojeg/money-maker-saga/main/moneymaker.py --output-document=moneymaker.py')
-    os.execv('moneymaker.py')
+    os.execv(__file__,'moneymaker.py')
   else:
     print('No updates UTD')
     os.system('rm updatechk')
